@@ -1,0 +1,22 @@
+<app-topbar (action)="handleAction($event)"></app-topbar>
+<div class="main-container">
+    
+    <div class="card-details">
+        <mat-card class="card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>title</mat-card-title>
+              <mat-card-subtitle>title</mat-card-subtitle>
+              <button mat-button mat-dialog-close [routerLink]="['/']"><mat-icon>close</mat-icon></button>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+        
+              </p>
+            </mat-card-content>
+            <mat-card-actions >
+                <button mat-stroked-button (click)="addToCart()" color="primary"><mat-icon>add_shopping_cart</mat-icon></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
