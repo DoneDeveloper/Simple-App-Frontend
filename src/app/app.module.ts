@@ -12,6 +12,8 @@ import {  MatCardModule } from '@angular/material/card';
 import {  MatButtonModule } from '@angular/material/button';
 import {  MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http'
+import {  MatTooltipModule  } from '@angular/material/tooltip';
 
 //Components
 import { TopbarComponent } from './features/topbar/topbar.component';
@@ -37,11 +39,13 @@ import { DetailedCardComponent } from './features/detailed-card/detailed-card.co
     MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

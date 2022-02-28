@@ -1,8 +1,7 @@
-<mat-card class="card">
+<mat-card [ngClass]="{'disabled' : !licensed}" class="card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{title}}</mat-card-title>
-      <mat-card-subtitle>{{titleDescription}}</mat-card-subtitle>
+        <mat-card-title>{{title}}</mat-card-title>
+        <mat-card-subtitle>{{productYear}}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="https://www.mcicon.com/wp-content/uploads/2021/01/Transport_Car_1-copy-11.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
@@ -11,7 +10,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions *ngIf="cardType==0">
-        <button mat-stroked-button color="primary" (click)="action.emit('add-cart')"><mat-icon>add_shopping_cart</mat-icon></button>
-        <button mat-stroked-button [routerLink]="['/detailed-card']">More details</button>
+        <button mat-stroked-button color="primary" [disabled]="licensed" matTooltip="Add item to your cart" [matTooltipPosition]="'above'" (click)="action.emit('add-cart')"><mat-icon>add_shopping_cart</mat-icon></button>
+        <button mat-stroked-button [disabled]="licensed" matTooltip="Watch more information about the item" [matTooltipPosition]="'above'" (click)="action.emit('more-details')">More details</button>
     </mat-card-actions>
 </mat-card>

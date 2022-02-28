@@ -9,8 +9,9 @@ import { CardType } from '../../enums/cardType';
 export class MatCardComponent implements OnInit {
   
   @Input() title!: string;
-  @Input() titleDescription!: string;
+  @Input() productYear!: number;
   @Input() cardType!: CardType;
+  @Input() licensed!: boolean;
   @Output() action = new EventEmitter<string>();
   
   constructor() { }

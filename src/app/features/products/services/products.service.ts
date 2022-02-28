@@ -9,19 +9,16 @@ export class ProductsService {
 
   constructor(private apiServise : ApiService) { }
 
-  // getAllProducts(){
-  //   return this.apiServise.getAllProducts()
-  //   .pipe(
-  //     map(productsOverview => {
-  //       if(productsOverview.Status == true){
-  //           return productsOverview;
-  //       }
-  //       return false;
-  //     }),
-  //     catchError((err) => {
-  //         console.log('error caught in service');
-  //         return throwError(err);    //Rethrow it back to component
-  //     })
-  //   )
-  // }
+    getAllProducts(){
+      return this.apiServise.getAllProducts()
+      .pipe(
+        map(productsOverview => {
+            return productsOverview;
+        }),
+        catchError((err) => {
+            console.log('error caught in service');
+            return throwError(err);    //Rethrow it back to component
+        })
+      )
+    }
 }

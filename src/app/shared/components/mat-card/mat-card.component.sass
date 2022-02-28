@@ -1,10 +1,49 @@
 .card
   max-width: 220px
   border-radius: 10px
-
-.example-header-image
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg')
-  background-size: cover
+  max-height: 23rem
+  margin: 0.5rem
+  text-align: start
 
 button:focus
     outline: none
+
+.header
+  display: flex
+  flex-direction: column
+  text-align: start
+  > mat-card-title
+    font-size: 18px
+    text-align: start
+
+.shadow-disable
+  background-color: #00000026
+  height: 360px
+  position: relative
+  top: -47.4%
+  width: 220px
+  left: 3.5%
+  border: 124px
+  border-radius: 26px
+
+.card::after
+  content: "Disabled"
+  height: 364px
+  width: 220px
+  position: absolute
+  top: -1px
+  left: -1px
+  border-radius: 10px
+  background-color: #00000091
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 35px
+  color: white
+  color: #ffecec
+  -webkit-text-stroke-color: black
+  border: 1px black solid
+  -webkit-text-stroke-width: 1px
+
+.disabled::after
+  display: none

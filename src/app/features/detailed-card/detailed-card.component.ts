@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { car } from 'src/app/shared/models/requests/warehouseResponse';
 import { CartComponent } from '../cart/cart.component';
 
 @Component({
@@ -10,9 +12,13 @@ import { CartComponent } from '../cart/cart.component';
 })
 export class DetailedCardComponent implements OnInit {
 
+  selectedCar !: car;
+
   constructor(public dialog: MatDialog) { }
 
+
   ngOnInit(): void {
+    this.selectedCar = history.state.car;
   }
 
   handleAction(event: any){
