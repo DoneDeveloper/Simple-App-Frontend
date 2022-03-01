@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProductsService } from 'src/app/features/products/services/products.service';
 import { CardType } from '../../enums/cardType';
+import { car } from '../../models/requests/warehouseResponse';
 
 @Component({
   selector: 'app-mat-card',
@@ -8,15 +10,17 @@ import { CardType } from '../../enums/cardType';
 })
 export class MatCardComponent implements OnInit {
   
-  @Input() title!: string;
-  @Input() productYear!: number;
+  @Input() car!: car;
   @Input() cardType!: CardType;
-  @Input() licensed!: boolean;
   @Output() action = new EventEmitter<string>();
+  clicked: boolean = false;
   
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+  }
+  addToCart(){
+    this.action.emit('add-cart');
   }
 
 }

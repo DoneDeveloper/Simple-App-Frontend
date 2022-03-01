@@ -26,9 +26,9 @@ export class ProductsComponent implements OnInit {
     //Get all warehouses by request request
       this.productsService.getAllProducts()
       .pipe(first())
-      .subscribe((res)=>{
+      .subscribe((res)=>{   
         this.warehouseList = res.data;
-        
+
         //Create and order list of all cars
         this.warehouseList.forEach((warehouse) => {
           warehouse.cars.vehicles.forEach((car) => {
@@ -46,6 +46,9 @@ export class ProductsComponent implements OnInit {
     console.log(event);
     switch(event){
       case('add-cart'):{
+        this.productsService.addToCart(selectedCar);
+
+        //Show success message snackbar
         this.dialog.open(ModalComponent, {
           panelClass: 'custom-dialog-container',
           hasBackdrop: false,
@@ -56,6 +59,7 @@ export class ProductsComponent implements OnInit {
             right: '2rem'
           }
         });
+
         break;
       }
       case('more-details'):{

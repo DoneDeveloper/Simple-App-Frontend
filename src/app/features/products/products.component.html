@@ -1,7 +1,7 @@
 <div class="product-container">
   <div class="d-flex flex-wrap justify-content-md-center inner-container">
       <div *ngFor="let car of carList">
-        <app-mat-card class="product-card" [licensed]="car.licensed" [title]="car.model" [productYear]="car.year_model" [cardType]="0" (action)="handleAction($event,car)"
+        <app-mat-card class="product-card" [car]="car" [cardType]="0" (action)="handleAction($event,car)"
         ></app-mat-card>
       </div>
 

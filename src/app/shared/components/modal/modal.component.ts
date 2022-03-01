@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal',
@@ -8,16 +8,16 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialogRef<any>) { }
 
   ngOnInit(): void {
-     setInterval(() =>{ 
-       this.dialog.closeAll();
-     }, 4000);
+      setInterval(() =>{ 
+        this.dialog.close();
+      }, 2000);
   }
 
   close(): void {
-    this.dialog.closeAll()
+    this.dialog.close()
   }
 
 }

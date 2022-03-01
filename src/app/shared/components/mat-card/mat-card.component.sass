@@ -1,7 +1,7 @@
 .card
   max-width: 220px
   border-radius: 10px
-  max-height: 23rem
+  max-height: 27rem
   margin: 0.5rem
   text-align: start
 
@@ -28,7 +28,7 @@ button:focus
 
 .card::after
   content: "Disabled"
-  height: 364px
+  height: 380px
   width: 220px
   position: absolute
   top: -1px
@@ -45,5 +45,14 @@ button:focus
   border: 1px black solid
   -webkit-text-stroke-width: 1px
 
-.disabled::after
+.notDisabled::after
   display: none
+
+.mat-card-contentt
+  margin: -2px 2px -2px -2px !important
+  text-align: end
+  font-weight: lighter
+
+.actions
+  display: flex
+  justify-content: space-between
